@@ -3,4 +3,7 @@ console.log("Tests are not implemented yet...");
 
 const { exec } = require('child_process');
 
-exec('ls ~/');
+out = exec('ls ~/');
+out.stdout.on('data', function(data) {
+    console.log(data); 
+});
